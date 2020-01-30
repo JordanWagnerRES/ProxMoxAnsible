@@ -1,0 +1,41 @@
+- hosts: all
+  tasks:
+   - name: "DeployVM"
+     proxmox_kvm:
+         api_user        : root@pam
+         api_password    : itescia
+         api_host        : 192.168.181.129
+         name            : Proxtest
+         node            : prox1
+         ide             : '{"ide0":"local:iso/ubuntu-18.04.3-live-server-amd64.iso,media=cdrom"}'
+         net             : '{"net0":"virtio,bridge=vmbr0,rate=200"}'
+         cores           : 2
+         vcpus           : 2
+         memory          : 1024
+
+   - name: "DeployVM2"
+     proxmox_kvm:
+         api_user        : root@pam
+         api_password    : Itescia
+         api_host        : 192.168.181.130
+         name            : Proxtest2
+         node            : prox2
+         ide             : '{"ide0":"local:iso/ubuntu-18.04.3-live-server-amd64.iso,media=cdrom"}'
+         net             : '{"net0":"virtio,bridge=vmbr0,rate=200"}'
+         cores           : 2
+         vcpus           : 2
+         memory          : 1024
+
+
+   - name: "DeployVM3"
+     proxmox_kvm:
+         api_user        : root@pam
+         api_password    : itescia
+         api_host        : 192.168.181.131
+         name            : Proxtest3
+         node            : prox3
+         ide             : '{"ide0":"local:iso/ubuntu-18.04.3-live-server-amd64.iso,media=cdrom"}'
+         net             : '{"net0":"virtio,bridge=vmbr0,rate=200"}'
+         cores           : 2
+         vcpus           : 2
+         memory          : 1024
