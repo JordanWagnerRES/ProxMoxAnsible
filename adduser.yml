@@ -1,0 +1,10 @@
+- hosts: all
+  vars:
+          user: itesciadmin
+          
+  tasks:
+       - name: "AddUser"
+         user:
+          user: "{{ user }}"
+          group: sudo
+
