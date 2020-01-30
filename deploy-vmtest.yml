@@ -1,0 +1,38 @@
+- hosts: all
+  vars:
+          api_user: root@pam
+  tasks:
+       - name: "Test-VM1"
+         proxmox_kvm:
+             api_user    : "{{ api_user }}"
+             api_password: Itescia12
+             api_host    : 192.168.200.128
+             name        : Test1
+             node        : nodeproxmox1
+             ide         : '{"ide0":"local:iso/ubuntu-18.04.1-live-server-amd64.iso,media=disk"}'
+             memory      : 2048
+             cores       : 2
+
+
+       - name: "Test-VM2"
+         proxmox_kvm:
+             api_user    : "{{ api_user }}"
+             api_password: Itescia12
+             api_host    : 192.168.200.129
+             name        : Test2
+             node        : nodeproxmox2
+             ide         : '{"ide0":"local:iso/ubuntu-18.04.1-live-server-amd64.iso,media=disk"}'
+             memory      : 2048
+             cores       : 2
+
+       - name: "Test-VM3"
+         proxmox_kvm:
+             api_user    : "{{ api_user }}"
+             api_password: Itescia12
+             api_host    : 192.168.200.130
+             name        : Test3
+             node        : nodeproxmox3
+             ide         : '{"ide0":"local:iso/ubuntu-18.04.1-live-server-amd64.iso,media=disk"}'
+             memory      : 2048
+             cores       : 2
+
