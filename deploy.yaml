@@ -40,3 +40,5 @@
          vcpus           : 2
          memory          : 1024
 
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5OxFPB3CvnZVmXzp6sRb/yMMOiDGxulgXYV+gjeUVF6H1s/YvdUDmNT7ihT50I5TQK+OGregI/0yIzKf/8Ksgk6EZN668GpFOwj4iqJdyWlxwFOxNXwK3odOCY706xEyBy1r5PoWDl2rAESD9+KeJJ55Jufqdhn0251/CvhoSnJwwQ9CVVDY7a4K3eQmY0AFfdwUctT3RF1ft/j7U6iEzHEOFxPlVSODjhmaVKDcthOTsP/IMV3VIJHlkav3x3JfgKFoyolLsG+lDGqkxESqgdjHFQ2TUpVqkpGigqLmYPa47dqVLGl0mGDg8+QuPY7n1xtm/jW1VA5JkhfNoft9f itesciadmin@ansible
