@@ -66,6 +66,12 @@ On doit ensuite spécifier à Ansible où trouver ce fichier. Vous pouvez le dé
 
 Vous devriez maintenant pouvoir exécuter votre playbook sans le --ask-vault-pass.
 
+
+
 # MERCI D'AVOIR LU NOTRE README !
 
+
+
 Hakim AZOUR & Jordan WAGNER
+M1 Réseaux
+Itescia
