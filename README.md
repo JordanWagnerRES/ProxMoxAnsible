@@ -19,5 +19,16 @@ Dans notre cas, nous avons crée un nouveau fichier yaml : /home/user/playbooks/
 ansible-playbook -i hosts.yaml -u root X
 * Où X correspond au playbook à lancer sur les hosts.
 
+# Gestion des Variables :
+
+Avec Ansible, Les variables dans les playbooks sont très similaires à l'utilisation de variables dans n'importe quel langage de programmation. 
+Il vous aide à utiliser et à affecter une valeur à une variable et à l'utiliser n'importe où dans le playbook. On peut mettre des conditions 
+autour de la valeur des variables et les utiliser en conséquence dans le playbook.
+Nous pourions crées un fichier où seront stockées toutes nos variables.
+La façon la plus simple de définir des variables est de les insérer directement dans votre playbook à l’intérieur d’une section vars.
+
+- hosts : <your hosts> 
+vars:
+tomcat_port : 8080 
 
 Hakim AZOUR & Jordan WAGNER
