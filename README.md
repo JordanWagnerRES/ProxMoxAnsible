@@ -47,7 +47,7 @@ On y met une variable contenant notre mot de passe:
 
 Et si on veut l'éditer:
 
-$ ansible-vault --ask-vault-pass edit group_vars/all/vault
+- $ ansible-vault --ask-vault-pass edit group_vars/all/vault
 
 On exécute notre playbook:
 
@@ -60,9 +60,9 @@ On exécute notre playbook:
 
 On doit ensuite spécifier à Ansible où trouver ce fichier. Vous pouvez le définir au niveau du /etc/ansible/ansible.cfg ou dans le ansible.cfg local du projet (ce que je préfère faire, ainsi il est commité dans le dépôt et tout le monde a la bonne version):
 
-#ansible.cfg
-[defaults]
-vault_password_file = vault_passwd
+- #ansible.cfg
+- [defaults]
+- vault_password_file = vault_passwd
 
 Vous devriez maintenant pouvoir exécuter votre playbook sans le --ask-vault-pass.
 
