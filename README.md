@@ -30,5 +30,40 @@ La façon la plus simple de définir des variables est de les insérer directeme
 - hosts : <your hosts> 
 vars:
 tomcat_port : 8080 
+  
+# Ansible Vault :
+
+Ansible Vault peut crypter tout fichier de données structuré utilisé par Ansible.
+Le chiffrement par défaut est AES (qui est basé sur un secret partagé).
+
+Création d'un vault:
+
+$ mkdir -p group_vars/all
+$ ansible-vault --ask-vault-pass create group_vars/all/vault
+
+On y met une variable contenant notre mot de passe:
+
+vault_utux_passwd: "{{ 'secret' | password_hash('sha256') }}"
+
+Et si on veut l'éditer:
+
+$ ansible-vault --ask-vault-pass edit group_vars/all/vault
+
+On exécute notre playbook:
+
+ansible-playbook myuser.yml --ask-vault-pass
+
+Ça marche, mais c'est un peu lourd car il faut taper le mot de passe vault à chaque exécution du playbook. Heureusement on peut le définir dans un fichier. On prendra soin de faire un gitignore pour ce fichier, voire même le placer dans un autre dossier:
+
+$ echo "motdepassevault" > vault_passwd
+$ echo "vault_passwd" >> .gitignore
+
+On doit ensuite spécifier à Ansible où trouver ce fichier. Vous pouvez le définir au niveau du /etc/ansible/ansible.cfg ou dans le ansible.cfg local du projet (ce que je préfère faire, ainsi il est commité dans le dépôt et tout le monde a la bonne version):
+
+#ansible.cfg
+[defaults]
+vault_password_file = vault_passwd
+
+Vous devriez maintenant pouvoir exécuter votre playbook sans le --ask-vault-pass.
 
 Hakim AZOUR & Jordan WAGNER
