@@ -28,7 +28,9 @@ Nous pourions crées un fichier où seront stockées toutes nos variables.
 La façon la plus simple de définir des variables est de les insérer directement dans votre playbook à l’intérieur d’une section vars.
 
 - hosts : <your hosts> 
+
 vars:
+
 tomcat_port : 8080 
   
 # Ansible Vault :
