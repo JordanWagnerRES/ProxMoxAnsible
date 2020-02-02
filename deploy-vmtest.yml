@@ -12,5 +12,6 @@
              name        : TestVM
              node        : nodeproxmox1
              ide         : '{"ide0":"local:iso/ubuntu-18.04.1-live-server-amd64.iso,media=disk"}'
+             net         : '{"net0":"virtio,bridge=vmbr0,rate=200"}'
              memory      : 2048
              cores       : 2
