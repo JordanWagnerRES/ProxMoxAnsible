@@ -1,11 +1,5 @@
 - hosts: all
   tasks:
-   - name: Add the user 'itescia' with a specific uid and a primary group of 'sudo'
-     user:
-      name: root@pam
-      comment: root@pam
-      uid: 1045
-      group: sudo
    - name: "SSHKEYGEN"
      authorized_key:
       user: itescia
